@@ -28,10 +28,10 @@
     <section id="newsletter">
       <div class="container">
         <h1>Subscribe To Our Newsletter</h1>
-        <form>
+        <div>
           <input type="email" placeholder="Enter Email...">
           <button type="submit" class="button_1">Subscribe</button>
-        </form>
+        </div>
       </div>
     </section>
 
@@ -42,21 +42,30 @@
         <aside id="sidebar">
           <div class="dark">
             <h3>Login: </h3>
-            <form class="quote">
+            <div class="quote">
+              <div>
+  							<label>Name</label><br>
+  							<input id="name" type="text" placeholder="Name">
+  						</div>
   						<div>
+  							<label>Date of birth</label><br>
+  							<input id="dob" type="date" placeholder="DOB">
+  						</div>
+  							<div>
   							<label>User Email</label><br>
-  							<input type="text" placeholder="Email">
+  							<input id="email" type="text" placeholder="Email">
   						</div>
   						<div>
   							<label>Password</label><br>
-  							<input type="password" placeholder="Password">
+  							<input id="password" type="password" placeholder="Password">
   						</div>
-  						<form>
+  						<div>
               </br>
-  						<button class="button_1" type="submit">Login</button>
-              <button class="button_1" type="submit">Sign up</button>
-					</form>
+  						<button id="submit" class="button_1" type="submit">Register</button>
+					</div>
           </div>
+          <br/>
+    <div id="error"></div>
         </aside>
       </div>
     </section>
@@ -73,4 +82,28 @@
       <p>EgReader.com, Copyright &copy; 2017</p>
     </footer>
   </body>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/ejs_production.js"></script>
+  <script>
+  var user = {};
+    $("#email").change(function(event){
+      user.email=$("#email").val();
+    });
+    $("#password").change(function(event){
+      user.password=$("#password").val();
+    });
+    $("#submit").click(function(event){
+      $.ajax({
+        method: 'POST',
+        url: "/auth/signin",
+        data: user
+      }).done(function(response){
+        console.log(response);
+        window.location.replace('/');
+      }).fail(function(response){
+        console.log(response);
+        $("#error").text("Something went wrong! Try again.");
+      });
+    });
+  </script>
 </html>

@@ -68,7 +68,7 @@ exports.signin = function(req, res, next) {
 };
 
 exports.signinView = function(req, res) {
-	res.render('./../public/views/user/signin.ejs', {
+	res.render('./../public/views/user/login.ejs', {
 		user: req.user || null,
 		request: req
 	});

@@ -6,6 +6,9 @@ module.exports = function(app){
  app.route('/api/articles')
 	.get(articles.list)
 	.post(users.requiresLogin, articles.create);
+ app.route('/home')
+	.get(articles.home)
+	
 
   app.route('/api/articles/:articleId')
 	.get(articles.read)

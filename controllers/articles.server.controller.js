@@ -3,6 +3,14 @@ var Article = require('./../models/Article.js');
 var errorHandler = require('./errors.server.controller');
 var _ = require('lodash');
 
+exports.home = function(req, res) {
+	res.render('./../public/views/index.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
+
+
 module.exports.list = function(req, res) {
   Article.find(function(err, data) {
     if (err) {
