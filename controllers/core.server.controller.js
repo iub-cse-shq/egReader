@@ -11,22 +11,30 @@ exports.index = function(req, res) {
 };
 
 exports.about = function(req, res) {
-	res.render('./../public/views/about.ejs', {
+	res.render('./../public/views/user/about.ejs', {
 		user: req.user || null,
 		request: req
 	});
 };
 
 exports.login = function(req, res) {
-	res.render('./../public/views/login.ejs', {
+	res.render('./../public/views/user/login.ejs', {
 		user: req.user || null,
 		request: req
 	});
 };
 
 exports.services = function(req, res) {
-	res.render('./../public/views/services.ejs', {
+	res.render('./../public/views/user/services.ejs', {
 		user: req.user || null,
 		request: req
 	});
 };
+
+exports.signup = function(req, res) {
+	res.render('./../public/views/user/signup.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
+

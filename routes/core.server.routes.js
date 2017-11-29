@@ -7,4 +7,7 @@ module.exports = function(app) {
 	app.route('/about').get(core.about);
 		app.route('/login').get(core.login);
 			app.route('/services').get(core.services);
+				app.route('/signup').get(core.signup);
+					
+			
 };

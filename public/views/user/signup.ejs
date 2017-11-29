@@ -44,12 +44,12 @@
             <h3>Login: </h3>
             <div class="quote">
               <div>
-  							<label>Name</label><br>
-  							<input id="name" type="text" placeholder="Name">
+  							<label>First Name</label><br>
+  							<input id="firstName" type="text" placeholder="First Name">
   						</div>
   						<div>
-  							<label>Date of birth</label><br>
-  							<input id="dob" type="date" placeholder="DOB">
+  							<label>Last Name</label><br>
+  							<input id="lastName" type="text" placeholder="Last Name">
   						</div>
   							<div>
   							<label>User Email</label><br>
@@ -86,6 +86,12 @@
   <script src="/vendor/ejs_production.js"></script>
   <script>
   var user = {};
+  $("#firstName").change(function(event){
+      user.firstName=$("#firstName").val();
+    });
+    $("#lastName").change(function(event){
+      user.lastName=$("#lastName").val();
+    });
     $("#email").change(function(event){
       user.email=$("#email").val();
     });
@@ -95,11 +101,11 @@
     $("#submit").click(function(event){
       $.ajax({
         method: 'POST',
-        url: "/auth/signin",
+        url: "/auth/signup",
         data: user
       }).done(function(response){
         console.log(response);
-        window.location.replace('/');
+        window.location.replace('/login');
       }).fail(function(response){
         console.log(response);
         $("#error").text("Something went wrong! Try again.");

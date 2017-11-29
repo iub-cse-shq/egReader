@@ -53,8 +53,7 @@ var UserSchema = new Schema({
     },
     username: {
         type: String,
-        trim: true,
-        required: 'User Name required'
+        trim: true
     },
     photo: {
         type: String,

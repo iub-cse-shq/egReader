@@ -17,8 +17,8 @@
         </div>
         <nav>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
             <li class="current"><a href="services.html">Services</a></li>
           </ul>
         </nav>
@@ -28,10 +28,7 @@
     <section id="newsletter">
       <div class="container">
         <h1>Subscribe To Our Newsletter</h1>
-        <div>
-          <input type="email" placeholder="Enter Email...">
-          <button type="submit" class="button_1">Subscribe</button>
-        </div>
+        
       </div>
     </section>
 
@@ -86,6 +83,7 @@
       user.password=$("#password").val();
     });
     $("#submit").click(function(event){
+      console.log(user);
       $.ajax({
         method: 'POST',
         url: "/auth/signin",
@@ -99,17 +97,7 @@
       });
     });
       $("#signup").click(function(event){
-      $.ajax({
-        method: 'POST',
-        url: "/auth/signup",
-        data: user
-      }).done(function(response){
-        console.log(response);
-        window.location.replace('/home');
-      }).fail(function(response){
-        console.log(response);
-        $("#error").text("Something went wrong! Try again.");
-      });
+ window.location.replace('/signup');
       
     });
   </script>
