@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>New Book</title>
+    </head>
+    <body>
+        <h1>New Book</h1>
+        <div>Name:
+        <input type="text" id="name"/>
+        </div>
+        <br>
+        <div>Image:
+            <textarea id="img"></textarea>
+            
+        </div>
+        <br>
+        <div>Description:
+            <textarea id="description"></textarea>
+            
+        </div>
+        <br>
+         <div>Price:
+            <textarea id="price"></textarea>
+            <label style="color:red" id="error" type="text"></label>
+            
+        </div>
+        <br>
+         <div>Quantity:
+            <textarea id="quantity"></textarea>
+            
+        </div>
+        <br>
+        <button id="submit">SUBMIT</button>
+        
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script>
+            var book={name:"", img:"", description:"" ,price:"",quantity:""};
+            $("#name").change(function(){
+                book.name=$("#name").val();
+            });
+            $("#img").change(function(){
+                book.name=$("#img").val();
+            });
+             $("#description").change(function(){
+                book.description=$("#description").val();
+            });
+             $("#price").change(function(){
+              book.price=$("#price").val();
+            });
+             $("#quantity").change(function(e){
+                book.quantity=$("#quantity").val();
+                console.log(e);
+            });
+          
+             $("#submit").click(function(){
+                 console.log(book);
+              $.ajax({
+                  method:"POST",
+                  url:"/api/books",
+                  data:book
+              }).done(function(response){
+                  console.log(response);
+                  window.location.replace("/books/"+response._id);
+              }).fail(function(response){
+                   $("#error").text(JSON.parse(response.responseText).message);
+                   console.log(JSON.parse(response.responseText).message);
+              });
+            });
+        </script>
+    </body>
+</html>

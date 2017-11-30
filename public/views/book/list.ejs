@@ -1,0 +1,15 @@
+
+<h1>Book List</h1>
+<% console.log(books) %>
+  <% for(var i=0; i<books.length; i++) { %>
+   
+    <h1> <%= books[i].title %> </h1>
+    <p>
+      <%= books[i].user%>
+    </p>
+    <h3><%= books[i].content%></h3>
+    </p>
+    <h3><%= books[i].created%></h3>
+    </br>
+    
+    <% } %>

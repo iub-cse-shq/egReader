@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Edit Book</title>
+    </head>
+    <body>
+        <h1>Edit Book</h1>
+        <div>name:
+        <input type="text" id="name" value=<%=request.book.name%> />
+        </div>
+        <br>
+        <div>img:
+            <textarea id="img"> <%=request.book.img%></textarea>
+            
+        </div>
+        <br>
+        <div>description:
+            <textarea id="description"> <%=request.book.description%></textarea>
+            
+        </div>
+        <br>
+         <div>price:
+         <input type="number" id="price" value=<%=request.book.price%> />
+           
+            
+        </div>
+        <br>
+         <div>quantity:
+            <input type="number" id="quantity" value=<%=request.book.quantity%> />
+        </div>
+        <br>
+        <button id="submit">SUBMIT</button>
+        
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script>
+        var bookID= <%- JSON.stringify(request.book._id) %>;
+            var book={};
+            $("#name").change(function(){
+                book.name=$("#name").val();
+            });
+            $("#img").change(function(){
+                book.description=$("#img").val();
+            });
+             $("#description").change(function(){
+                book.description=$("#description").val();
+            });
+             $("#price").change(function(){
+                book.price=$("#price").val();
+            });
+             $("#quantity").change(function(e){
+                book.quantity=$("#quantity").val();
+                console.log(e);
+            });
+             $("#submit").click(function(){
+                 console.log(book);
+              $.ajax({
+                  method:"PUT",
+                  url:"/api/books/edit/"+bookID,
+                  data:book
+              }).done(function(response){
+                  console.log(response);
+                  window.location.replace("/books/"+response._id);
+              }).fail(function(response){
+                   $("#error").text(JSON.parse(response.responseText).message);
+                   console.log(JSON.parse(response.responseText).message);
+                 // window.location.replace("/books/"+response._id);
+                    }); 
+                    });
+        </script>
+    </body>
+</html>

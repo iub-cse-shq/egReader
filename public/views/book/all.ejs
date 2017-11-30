@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>All Books  </title> 
+      <body>
+          <h1>All Books  </h1> 
+       <% console.log(books) %>
+  <% for(var i=0; i<books.length; i++) { %>
+  <h1> <a href="/books/<%=books[i]._id %>" >
+  
+     <%= books[i].name %> </a></h1>
+    
+       <% } %>
+
+          </body>  
+        
+    </head>
+    
+    
+    
+</html>
