@@ -2,15 +2,22 @@
     <head>
         <title>Books  </title> 
       <body>
-          <h1> Books  </h1> 
+        <center>  <h1> Books  </h1> 
           <% console.log(request.book) %>
           <h2> Name: <%= request.book.name %> </h2>
-           <h4> Image: <%= request.book.img %> </h4>
+           <h4>  <img src=<%= request.book.img %> width="300" height="400" ></h4>
+           <h4> Author Name: <%= request.book.auth_name %> </h4>
            <h4> Description: <%= request.book.description %> </h4>
-           <h4>Quantity: <%= request.book.quantity%></h4>
-             <h4>Price: <%= request.book.price%></h4>
-         
-          </body>  
+           
+              <form action="http://fac.ksu.edu.sa/sites/default/files/ObjectOrientedProgramminginC4thEdition.pdf">
+    <input type="submit" value="Read" />
+            </form>
+             <button id="submit">Download</button>
+           
+             
+          </center>
+             
+             </body>  
         
     </head>
     

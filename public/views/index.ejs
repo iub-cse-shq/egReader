@@ -46,39 +46,17 @@
 
     <section id="boxes">
       <div class="container">
-        <div class="box">
-          <img src="./image/book1.jpg">
-          <h3>Object Oriented C++</h3>
+          <% for(var i=0; i<books.length; i++) { %>
+          <div class="box">
+          <a href="/books/<%=books[i]._id %>"><img src=<%= books[i].img %>></a>
+          <h3><%= books[i].name %></h3>
+          <p><%= books[i].auth_name %></p>
           <p>By Robert Lafore,Topic:object oriented programming</p>
         </div>
-        <div class="box">
-          <img src="./image/book2.jpg">
-          <h3>Java 8 Pocket Guide</h3>
-          <p>By patricia Linguori,Robert liguor,Publisher: O'Reilly Meda,Inc</p>
-        </div>
-        <div class="box">
-          <img src="./image/book3.jpg">
-          <h3>PHP & MySQL</h3>
-          <p>By W Json Gilmore,Topic:PHP and MySql</p>
-        </div>
-
-
-<div class="box">
-          <img src="./image/book4.jpg">
-          <h3>Learn to code HTML & CSS</h3>
-          <p>By Shay Howe</p>
-        </div>
-<div class="box">
-          <img src="./image/book5.jpg">
-          <h3>Intel Microprocessors</h3>
-          <p>By Barry B.Brey, topic:microprocessor</p>
-        </div>
-<div class="box">
-          <img src="./image/book6.jpg">
-          <h3>Computer System Architecture</h3>
-          <p>By M.Morris Mano</p>
-        </div>
-      </div>
+  
+    
+       <% } %>
+          </div>
     </section>
 
     <footer>

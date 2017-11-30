@@ -17,6 +17,13 @@ img: {
     
   },
   
+  auth_name: {
+    type: String,
+    default: '',
+    trim: true,
+    required: 'Author Name required'
+  },
+  
  description: {
     type: String,
     default: '',
@@ -24,7 +31,7 @@ img: {
     
   },
   
-   price: {
+/*   price: {
     type: Number,
     trim: true,
     required: 'Price required'
@@ -36,7 +43,7 @@ img: {
     trim: true,
     required: 'Quantity required'
   },
-  
+  */
   
   user: {
     type: Schema.ObjectId,

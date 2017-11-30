@@ -8,6 +8,10 @@
         <input type="text" id="name"/>
         </div>
         <br>
+        <div>Author Name:
+        <input type="text" id="auth_name"/>
+        </div>
+        <br>
         <div>Image:
             <textarea id="img"></textarea>
             
@@ -18,7 +22,7 @@
             
         </div>
         <br>
-         <div>Price:
+        <!-- <div>Price:
             <textarea id="price"></textarea>
             <label style="color:red" id="error" type="text"></label>
             
@@ -28,28 +32,31 @@
             <textarea id="quantity"></textarea>
             
         </div>
-        <br>
+        <br> -->
         <button id="submit">SUBMIT</button>
         
         <script src="/lib/jquery/dist/jquery.min.js"></script>
         <script>
-            var book={name:"", img:"", description:"" ,price:"",quantity:""};
+            var book={name:"", img:"", auth_name:"", description:"" };
             $("#name").change(function(){
                 book.name=$("#name").val();
             });
             $("#img").change(function(){
-                book.name=$("#img").val();
+                book.img=$("#img").val();
+            });
+            $("#auth_name").change(function(){
+                book.auth_name=$("#auth_name").val();
             });
              $("#description").change(function(){
                 book.description=$("#description").val();
             });
-             $("#price").change(function(){
+           /*  $("#price").change(function(){
               book.price=$("#price").val();
             });
              $("#quantity").change(function(e){
                 book.quantity=$("#quantity").val();
                 console.log(e);
-            });
+            }); */
           
              $("#submit").click(function(){
                  console.log(book);

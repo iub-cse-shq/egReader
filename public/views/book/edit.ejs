@@ -18,7 +18,7 @@
             
         </div>
         <br>
-         <div>price:
+        <!-- <div>price:
          <input type="number" id="price" value=<%=request.book.price%> />
            
             
@@ -27,7 +27,7 @@
          <div>quantity:
             <input type="number" id="quantity" value=<%=request.book.quantity%> />
         </div>
-        <br>
+        <br> -->
         <button id="submit">SUBMIT</button>
         
         <script src="/lib/jquery/dist/jquery.min.js"></script>
@@ -40,16 +40,19 @@
             $("#img").change(function(){
                 book.description=$("#img").val();
             });
+             $("#auth_name").change(function(){
+                book.auth_name=$("#auth_name").val();
+            });
              $("#description").change(function(){
                 book.description=$("#description").val();
             });
-             $("#price").change(function(){
+          /*   $("#price").change(function(){
                 book.price=$("#price").val();
             });
              $("#quantity").change(function(e){
                 book.quantity=$("#quantity").val();
                 console.log(e);
-            });
+            }); */
              $("#submit").click(function(){
                  console.log(book);
               $.ajax({
