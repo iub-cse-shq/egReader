@@ -1,19 +1,46 @@
 <html>
     <head>
         <title>All Books  </title> 
-      <body>
+        <link href="/css/style.css" rel="stylesheet" type"text/css">
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable All Category Book Reading">
+	  <meta name="keywords" content="Read Online, Save and Download, Unlimited Books">
+  	<meta name="author" content="Brad Traversy">
+   
+    </head>
+    <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">EgReader.com</span> Read Online Nonstop</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="/books/all">All Books</a></li>
+            <li ><a href="/books/new">Create Book</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+    <center>
           <h1>All Books  </h1> 
        <% console.log(books) %>
   <% for(var i=0; i<books.length; i++) { %>
-  <h1> <a href="/books/<%=books[i]._id %>" >
+   <h2><li> <a href="/books/<%=books[i]._id %>" >
   
-     <%= books[i].name %> </a></h1>
+     <%= books[i].name %> </a></li></h2>
     
        <% } %>
-
-          </body>  
+</center>
+<br> <br> <br> <br> <br>
+        <footer>
+      <p>EgReader.com, Copyright &copy; 2017</p>
+    </footer>
+          </body> 
+          
         
-    </head>
+    
     
     
     

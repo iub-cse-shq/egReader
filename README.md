@@ -1,3 +1,10 @@
+EgReader.com is an open and free platform for reading pdf books online. Its very user friendly and doesn't require any sign up process.
+From home page user need to click on book image which he wants to read. Then the pdf file will open in browser. There is download and print 
+option available in the pdf view.
+Admin can create new books and edit them. For that sign in is required.
+In future I will add category of books, newsletter through email, book request to admin etc. 
+
+
 **How to set up the code**
 
 1. Install [Node.js](https://nodejs.org/en/download/) and [MongoDB](https://www.mongodb.com/download-center?jmp=nav) on your computer

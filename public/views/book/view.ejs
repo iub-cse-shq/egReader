@@ -1,21 +1,62 @@
 <html>
     <head>
         <title>Books  </title> 
+        <link href="/css/style.css" rel="stylesheet" type"text/css">
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable All Category Book Reading">
+	  <meta name="keywords" content="Read Online, Save and Download, Unlimited Books">
+  	<meta name="author" content="Brad Traversy">
+        <style>
+.button {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
       <body>
-        <center>  <h1> Books  </h1> 
+          <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">EgReader.com</span> Read Online Nonstop</h1>
+        </div>
+        <nav>
+          <ul>
+            <li ><a href="/books/all">All Books</a></li>
+            <li ><a href="/books/new">Create Book</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+        <center>  <h1> Book Details  </h1> 
           <% console.log(request.book) %>
           <h2> Name: <%= request.book.name %> </h2>
            <h4>  <img src=<%= request.book.img %> width="300" height="400" ></h4>
-           <h4> Author Name: <%= request.book.auth_name %> </h4>
-           <h4> Description: <%= request.book.description %> </h4>
+           <h3> Author Name: <%= request.book.auth_name %> </h4>
+           <h3> Description: <%= request.book.description %> </h4>
            
-              <form action="http://fac.ksu.edu.sa/sites/default/files/ObjectOrientedProgramminginC4thEdition.pdf">
-    <input type="submit" value="Read" />
-            </form>
-             <button id="submit">Download</button>
-           
+            <!-- <form action="http://fac.ksu.edu.sa/sites/default/files/ObjectOrientedProgramminginC4thEdition.pdf">
+    <input type="submit" value="Read" /> 
+            </form> -->
+            
+           <h1> <form action=<%=request.book.pdf%>>
+   <input type="submit" value="Read" />
+   <!--  <a href="#"  class="button">Read</a> -->
+            </form> </h1>
+            
              
           </center>
+           
+        <footer>
+      <p>EgReader.com, Copyright &copy; 2017</p>
+    </footer>
              
              </body>  
         

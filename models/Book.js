@@ -16,6 +16,12 @@ img: {
     required:'image required!'
     
   },
+  pdf: {
+    type: String,
+    default: '',
+    trim:true,
+  
+  },
   
   auth_name: {
     type: String,
